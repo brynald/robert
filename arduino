@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+PROJECT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+
+# Local Arduino directories
+export ARDUINO_DIRECTORIES_DATA="$PROJECT_DIR/arduino-data"
+export ARDUINO_DIRECTORIES_DOWNLOADS="$PROJECT_DIR/arduino-downloads"
+export ARDUINO_DIRECTORIES_USER="$PROJECT_DIR/arduino-user"
+
+# Local build cache
+export XDG_CACHE_HOME="$PROJECT_DIR/.cache"
+
+# Execute local Arduino CLI
+exec "$PROJECT_DIR/tools/bin/arduino-cli" \
+    --config-file "$PROJECT_DIR/config/arduino-cli.yaml" \
+    "$@"

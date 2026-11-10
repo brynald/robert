@@ -1,0 +1,12 @@
+# Arduino toolchain and packages
+tools/bin/
+arduino-data/
+arduino-downloads/
+arduino-user/
+
+# Build cache and output
+.cache/
+build/
+
+# VS Code
+.vscode/*.log
